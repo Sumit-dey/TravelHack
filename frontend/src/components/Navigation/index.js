@@ -8,13 +8,8 @@ import "./Navigation.css";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
-  const dispatch = useDispatch();
-  const history = useHistory();
-
-    // const demoLogin = async () => {
-    //   await dispatch(loginUser("Demo", "password"));
-    //   history.push("/home");
-    // };
+  // const dispatch = useDispatch();
+  // const history = useHistory();
 
   let sessionLinks;
 
@@ -23,23 +18,22 @@ function Navigation({ isLoaded }) {
   else {
     sessionLinks = (
       <>
-        <NavLink className="nav-link" to="/login">Log In</NavLink>
-        <NavLink className="nav-link" to="/signup">Sign Up</NavLink>
-        {/* <span className="nav-link" onClick={demoLogin}>Demo</span> */}
+        <NavLink to="/login" className="nav-link">Log In</NavLink>
+        <NavLink to="/signup" className="nav-link">Sign Up</NavLink>
       </>
     );
   }
 
   return (
     <div  className="nav-container">
-    <ul>
-      <li>
-        <NavLink className="nav-link" exact to="/">
-          Travel-Hack
-        </NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+      <ul>
+        <li>
+          {isLoaded && sessionLinks}
+          <NavLink className="nav-link" exact to="/">
+            TravelHack
+          </NavLink>
+        </li>
+      </ul>
     </div>
   );
 }

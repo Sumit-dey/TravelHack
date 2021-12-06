@@ -34,4 +34,4 @@ ReactDOM.render(
     <Root />
   </React.StrictMode>,
   document.getElementById('root')
-)
+);
