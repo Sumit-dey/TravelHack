@@ -1,106 +1,93 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import "../LoginForm/LoginForm.css";
+import './SignupForm.css';
 
-function SignupForm() {
-  const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [errors, setErrors] = useState([]);
+function SignupFormPage() {
+    const dispatch = useDispatch();
+    const sessionUser = useSelector((state) => state.session.user);
+    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+    if (sessionUser) return <Redirect to="/" />;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password === confirmPassword) {
-      setErrors([]);
-      return dispatch(
-        sessionActions.signup({ email, username, password })
-      ).catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      });
-    }
-    return setErrors([
-      "Confirm Password field must be the same as the Password field",
-    ]);
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-  return (
-    <div className="form-container">
-      <form className="user-form" onSubmit={handleSubmit}>
-        <h2 className="form-title"> Sign Up</h2>
-        <ul className="user-form-errors">
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
-        <div className="sign-up-form">
-          <div className="form-inputs">
-            <label>Username</label>
-            <input
-              type="text"
-              value={username}
-              placeholder="Username"
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-inputs">
-            <label>Email</label>
-            <input
-              type="text"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-inputs">
-            <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-inputs">
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              value={confirmPassword}
-              placeholder="Confirm Password"
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-          </div>
+        return dispatch(sessionActions.signup({ email, username, password, confirmPassword }))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            });
+
+    };
+
+    return (
+        <div className='parent-signup-div'>
+            <div className='signup-page-div'>
+                <form onSubmit={handleSubmit}>
+                    <ul className='signup-login-errors'>
+                        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                    </ul>
+                    <div className='email-div'>
+                        <label className='email-label'>
+                            Email
+                            <input className='email-input-box'
+                                placeholder='Enter your email address'
+                                type="text"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            // required
+                            />
+                        </label>
+                    </div>
+                    <div className='username-div'>
+                        <label className='username-label'>
+                            Username
+                            <input className='username-input-box'
+                                placeholder='Enter a username'
+                                type="text"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            // required
+                            />
+                        </label>
+                    </div>
+                    <div className='password-div'>
+                        <label className='password-label'>
+                            Password
+                            <input className='password-input-box'
+                                placeholder='Enter a password'
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            // required
+                            />
+                        </label>
+                    </div>
+                    <div className='confirm-password-div'>
+                        <label className='confirm-password-label'>
+                            Confirm Password
+                            <input className='confirm-password-input-box'
+                                placeholder='Confirm password'
+                                type="password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                            // required
+                            />
+                        </label>
+                    </div>
+                    <div className='signup-button-div'>
+                        <button type="submit" className='signup-button'>Sign Up</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div className="sub-cancel-buttons">
-          <button className="submit_button" type="submit">
-            Sign Up
-          </button>
-          <span className="cancel-button">
-            <Link className="redirect-link" to="/">
-              Cancel
-            </Link>
-          </span>
-        </div>
-        <label>
-          Already have an account? Login{" "}
-          <Link className="redirect-link" to="/login">
-            here
-          </Link>
-        </label>
-      </form>
-    </div>
-  );
+    );
 }
 
-export default SignupForm;
+export default SignupFormPage;

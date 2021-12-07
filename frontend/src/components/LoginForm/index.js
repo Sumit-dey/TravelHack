@@ -1,90 +1,74 @@
-import React, { useState } from "react";
-import { Redirect, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import * as sessionActions from "../../store/session";
-import "./LoginForm.css";
+import React, { useState } from 'react';
+import * as sessionActions from '../../store/session';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import './LoginForm.css';
 
-function LoginForm() {
-  const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  const [credential, setCredential] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
+function LoginFormPage() {
+    const dispatch = useDispatch();
+    const sessionUser = useSelector(state => state.session.user);
+    const [credential, setCredential] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+    const demoUser = () => {
+        setCredential('demo')
+        setPassword('password')
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrors([]);
-    return dispatch(sessionActions.loginUser({ credential, password })).catch(
-      async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      }
+    if (sessionUser) return (
+        <Redirect to="/" />
     );
-  };
 
-  return (
-    <div className="form-container">
-      <form className="user-form" onSubmit={handleSubmit}>
-        <h2 className="form-title"> Sign In</h2>
-        <ul className="user-form-errors">
-          {errors.map((error, i) => (
-            <li key={i}>{error}</li>
-          ))}
-        </ul>
-        <div className="sign-in-form">
-          <div className="form-inputs">
-            <label htmlFor="credential">Username or Email</label>
-            <input
-              name="credential"
-              type="text"
-              placeholder="Username or Email Address"
-              value={credential}
-              onChange={(e) => setCredential(e.target.value)}
-            />
-          </div>
-          <div className="form-inputs">
-            <label htmlFor="password">Password</label>
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setErrors([]);
+        return dispatch(sessionActions.login({ credential, password }))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            });
+    }
+
+    return (
+        <div className='parent-login-div'>
+            <div className='login-page-div'>
+                <ul className='signup-login-errors'>
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                <form onSubmit={handleSubmit}>
+                    <div className='username-email-div'>
+                        <label className='username-email-label'>
+                            Username or Email
+                            <input className='username-input-box'
+                                placeholder='Enter username or email'
+                                type="text"
+                                value={credential}
+                                onChange={(e) => setCredential(e.target.value)}
+                            // required
+                            />
+                        </label>
+                    </div>
+                    <div className='password-div'>
+                        <label className='password-label'>
+                            Password
+                            <input className='password-input-box'
+                                placeholder='Enter password'
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            // required
+                            />
+                        </label>
+                    </div>
+                    <div className='login-button-div'>
+                        <button type="submit" className='login-button'>Log In</button>
+                        <button type="submit" className='login-button' onClick={demoUser}>Demo user</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div className="sub-cancel-buttons">
-          <button className="submit_button" type="submit">
-            Sign In
-          </button>
-          <button
-            className="submit_button"
-            onClick={() => {
-              setCredential("Demo");
-              setPassword("password");
-            }}
-          >
-            Demo User
-          </button>
-        </div>
-        <div className="sub-cancel-buttons">
-          <span className="cancel-button">
-            <Link className="redirect-link" to="/">
-              Cancel
-            </Link>
-          </span>
-        </div>
-        <label>
-          Don't have an account? Signup{" "}
-          <Link className="redirect-link" to="/signup">
-            here
-          </Link>
-        </label>
-      </form>
-    </div>
-  );
+    );
 }
 
-export default LoginForm;
+export default LoginFormPage;

@@ -1,41 +1,36 @@
-import React from "react";
-import { NavLink, useHistory } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import ProfileButton from "./ProfileButton";
-import { loginUser } from "../../store/session";
-
-import "./Navigation.css";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import ProfileButton from './ProfileButton';
+import './Navigation.css';
 
 function Navigation({ isLoaded }) {
-  const sessionUser = useSelector((state) => state.session.user);
-  // const dispatch = useDispatch();
-  // const history = useHistory();
+    const sessionUser = useSelector(state => state.session.user);
 
-  let sessionLinks;
+    let sessionLinks;
+    if (sessionUser) {
+        sessionLinks = (
+            <ProfileButton user={sessionUser} />
+        );
+    } else {
+        sessionLinks = (
+            <>
+                <NavLink to="/login" className='navbar-buttons' id='navbar-login-button'>Log In</NavLink>
+                <NavLink to="/signup" className='navbar-buttons' id='navbar-signup-button'>Sign Up</NavLink>
+            </>
+        );
+    }
 
-  if (sessionUser) sessionLinks = <ProfileButton user={sessionUser} />;
-
-  else {
-    sessionLinks = (
-      <>
-        <NavLink to="/login" className="nav-link">Log In</NavLink>
-        <NavLink to="/signup" className="nav-link">Sign Up</NavLink>
-      </>
+    return (
+        <div className='navbar-div'>
+            <ul className='navbar-ul'>
+                <li className='navbar-li'>
+                    <NavLink exact to="/" className='navbar-buttons' id='navbar-home-button'>Travel-Hack</NavLink>
+                    {isLoaded && sessionLinks}
+                </li>
+            </ul>
+        </div>
     );
-  }
-
-  return (
-    <div  className="nav-container">
-      <ul>
-        <li>
-          {isLoaded && sessionLinks}
-          <NavLink className="nav-link" exact to="/">
-            TravelHack
-          </NavLink>
-        </li>
-      </ul>
-    </div>
-  );
 }
 
 export default Navigation;
