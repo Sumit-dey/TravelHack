@@ -68,7 +68,7 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.single-spot-aboutThisSpace {
+.single-spot-aboutThePlace {
     padding-bottom: 50px;
     border-bottom: 1px solid lightgrey;
     margin-top: 25px;
@@ -142,6 +142,7 @@
 }
 
 .check-avail-button {
+
     margin-left: 22px;
     margin-top: 20px;
     height: 35px;
@@ -149,7 +150,7 @@
     border-radius: 5px;
     border: none;
     color: white;
-    background-color: red;
+    background-color: firebrick;
 }
 
 .single-spot-price-per-night {
@@ -158,21 +159,31 @@
 }
 
 .single-spot-edit-button {
-    padding-left: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: firebrick;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-decoration: none;
-    color: orangered;
+    color: white;
+    border-radius: 5px;
 }
 
 .single-spot-delete-button {
+    background-color: firebrick;
     border: none;
-    background-color: white;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
     /* margin-left: 970px; */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-decoration: none;
-    color: orangered;
+    color: white;
     cursor: pointer;
-    padding-left: 3px;
+
 }
 
 .checkin-checkout-guests-parent {

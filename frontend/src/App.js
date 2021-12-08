@@ -9,11 +9,12 @@ import Homepage from "./components/Homepage";
 import Georgia from "./components/Georgia";
 import Alabama from "./components/Alabama";
 import SanJose from './components/SanJose'
-import Spot from "./components/Spot";
+import Spot from "./components/SingleSpot";
 import CreateListing from "./components/CreateListing";
 import EditListing from "./components/EditListing";
 import AllSpots from "./components/Allspots";
-// import SearchResultSpots from "./components/SearchResultSpots";
+import SearchResultSpots from "./components/SearchResultSpots";
+import LeaveReview from "./components/LeaveReviewModal/LeaveReview";
 
 function App() {
   const dispatch = useDispatch();
@@ -57,9 +58,9 @@ function App() {
           <Route exact path='/allspots'>
             <AllSpots />
           </Route>
-          {/* <Route path='/allspots/:searchTerm'>
+          <Route path='/allspots/:searchTerm'>
             <SearchResultSpots />
-          </Route> */}
+          </Route>
         </Switch>
       )}
     </>

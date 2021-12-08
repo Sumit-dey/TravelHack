@@ -35,7 +35,7 @@ function ProfileButton({ user }) {
 
     return (
         <>
-            <a href='/createlisting' className='create-listing-link'>Create a listing</a>
+            <a href='/createlisting' className='create-listing-link'>Become a Host</a>
             <button onClick={openMenu} id='dropdown-menu-button'>
                 {/* <img src={dropDownMenuImage} alt='dropdown menu' id='dropdown-menu-image' /> */}
             </button>

@@ -1,8 +1,7 @@
 import { csrfFetch } from './csrf';
 
-const LOAD_BERKELEY = 'spots/LOAD_BERKELEY';
-const LOAD_OAKLAND = 'spots/LOAD_OAKLAND';
-const LOAD_SAN_FRANCISCO = 'spots/LOAD_SAN_FRANCISCO';
+const LOAD_GEORGIA = 'spots/LOAD_GEORGIA';
+const LOAD_ALABAMA = 'spots/LOAD_ALABAMA';
 const LOAD_SAN_JOSE = 'spots/LOAD_SAN_JOSE';
 const LOAD_SINGLE_SPOT = 'spots/LOAD_SINGLE_SPOT';
 const ADD_NEW_LISTING = 'spots/ADD_NEW_LISTING';
@@ -21,20 +20,16 @@ const search = list => ({
     list
 })
 
-const loadBerkeley = list => ({
-    type: LOAD_BERKELEY,
+const loadGeorgia = list => ({
+    type: LOAD_GEORGIA,
     list,
 });
 
-const loadOakland = list => ({
-    type: LOAD_OAKLAND,
+const loadAlabama = list => ({
+    type: LOAD_ALABAMA,
     list,
 })
 
-const loadSanFrancisco = list => ({
-    type: LOAD_SAN_FRANCISCO,
-    list,
-})
 
 const loadSanJose = list => ({
     type: LOAD_SAN_JOSE,
@@ -80,32 +75,25 @@ export const getSearch = (searchTerm) => async dispatch => {
     }
 }
 
-export const getBerkeleySpots = () => async dispatch => {
-    const response = await fetch('/api/berkeley');
+export const getGeorgiaSpots = () => async dispatch => {
+    const response = await fetch('/api/georgia');
 
     if (response.ok) {
         const spots = await response.json();
-        dispatch(loadBerkeley(spots));
+        dispatch(loadGeorgia(spots));
     }
 }
 
-export const getOaklandSpots = () => async dispatch => {
-    const response = await fetch('/api/oakland');
+export const getAlabamaSpots = () => async dispatch => {
+    const response = await fetch('/api/alabama');
 
     if (response.ok) {
         const spots = await response.json();
-        dispatch(loadOakland(spots));
+        dispatch(loadAlabama(spots));
     }
 }
 
-export const getSanFranciscoSpots = () => async dispatch => {
-    const response = await fetch('/api/sanfrancisco');
 
-    if (response.ok) {
-        const spots = await response.json();
-        dispatch(loadSanFrancisco(spots));
-    }
-}
 
 export const getSanJoseSpots = () => async dispatch => {
     const response = await fetch('/api/sanjose');
@@ -192,7 +180,7 @@ const initialState = {
 
 const spotReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOAD_BERKELEY: {
+        case LOAD_GEORGIA: {
             const newState = { ...state }
             action.list.forEach(spot => {
                 newState[spot.id] = spot;
@@ -201,7 +189,7 @@ const spotReducer = (state = initialState, action) => {
             return newState;
 
         }
-        case LOAD_OAKLAND: {
+        case LOAD_ALABAMA: {
             const newState = { ...state }
             action.list.forEach(spot => {
                 newState[spot.id] = spot;
@@ -210,14 +198,7 @@ const spotReducer = (state = initialState, action) => {
             return newState;
         }
 
-        case LOAD_SAN_FRANCISCO: {
-            const newState = { ...state }
-            action.list.forEach(spot => {
-                newState[spot.id] = spot;
-            })
-            newState.spots = true;
-            return newState;
-        }
+
 
         case LOAD_SAN_JOSE: {
             const newState = { ...state }

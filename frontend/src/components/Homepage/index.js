@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import * as sessionActions from '../../store/session';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+// import * as sessionActions from '../../store/session';
+import { useDispatch } from 'react-redux';
+// import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { getSearch } from '../../store/spots';
 import './Homepage.css';
@@ -9,10 +9,9 @@ import './Homepage.css';
 function HomePage() {
     const dispatch = useDispatch();
     const history = useHistory()
-    const sessionUser = useSelector(state => state.session.user);
+    // const sessionUser = useSelector(state => state.session.user);
     const [searchTerm, setSearchTerm] = useState('');
-    const [password, setPassword] = useState('');
-    const [errors, setErrors] = useState([]);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,17 +29,17 @@ function HomePage() {
                 <img src='https://www.teahub.io/photos/full/112-1123990_beautiful-cartoon-background.jpg' alt='green forest' className='homeImage'></img>
                 Welcome to Travel hack
             </div>
-            <div className='inner-search-div'>
-                {/* <form className='search-bar' onSubmit={handleSubmit}>
+            {/* <div className='inner-search-div'>
+                <form className='search-bar' onSubmit={handleSubmit}>
                     <label>
                         <input className='search-bar-input' type='search' placeholder='What city would you like to visit?' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} required />
                         <button type='submit' className='search-button'>Go!</button>
                     </label>
-                </form> */}
-            </div>
-            <div className='get-all-spots-title'></div>
+                </form>
+            </div> */}
+            <div className='get-all-spots-title'>Not sure where to go? Perfect.</div>
             <div>
-                <a href='/allspots' className='get-all-spots'>I am flexible</a>
+                <a href='/allspots' className='get-all-spots'>I'm Flexible</a>
             </div>
             <div className='explore-nearby-title-div'>
                 <span className='explore-nearby-title'>Inspiration for your next trip</span>

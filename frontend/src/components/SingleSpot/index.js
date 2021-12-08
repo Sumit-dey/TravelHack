@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import { useHistory } from 'react-router-dom';
 import { getSingleSpot, deleteListing } from '../../store/spots';
 import LeaveReview from '../LeaveReviewModal';
-import './Spot.css';
+import './SingleSpot.css';
 
 function SingleSpot() {
     const { id } = useParams();
@@ -27,12 +27,12 @@ function SingleSpot() {
     if (sessionUser?.id === spot?.userId) {
         editLink = (
             <span>•
-                <a href={`/editlisting/${spot?.id}`} className='single-spot-edit-button'>edit listing</a>
+                <a href={`/editlisting/${spot?.id}`} className='single-spot-edit-button'>EDIT</a>
             </span>
         )
         deleteLink = (
             <span>•
-                <button onClick={() => handleDelete(id)} className='single-spot-delete-button'>remove listing</button>
+                <button onClick={() => handleDelete(id)} className='single-spot-delete-button'>REMOVE</button>
             </span>
         )
     }
@@ -72,7 +72,7 @@ function SingleSpot() {
                             <span className='spot-user-headshot-span'><img src={spot?.User.photoUrl} className='spot-user-headshot'></img></span>
                         </div>
                         <div className='single-spot-details'>{spot?.details}</div>
-                        <div className='single-spot-about-this-space'>About this Place</div>
+                        <div className='single-spot-about-this-space'>About this Space</div>
                         <div className='single-spot-aboutThisSpace'>{spot?.aboutThisSpace}</div>
                         <div className='what-this-place-offers'>What this place offers</div>
                         <div className='offerings-parent-div'>

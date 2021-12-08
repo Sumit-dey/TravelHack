@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 // import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
-import { getOaklandSpots } from '../../store/spots';
+import { getAlabamaSpots } from '../../store/spots';
 import '../Georgia/Georgia.css';
 
 function Alabama() {
@@ -15,7 +15,7 @@ function Alabama() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getOaklandSpots());
+        dispatch(getAlabamaSpots());
     }, [dispatch])
 
     return (
@@ -41,9 +41,9 @@ function Alabama() {
 
                 })}
             </div>
-            <div className='berkeley-map-parent-container'>
+            {/* <div className='berkeley-map-parent-container'>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201876.9935349438!2d-122.37539484879969!3d37.75890609437804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857d8b28aaed03%3A0x71b415d535759367!2sOakland%2C%20CA!5e0!3m2!1sen!2sus!4v1636407685609!5m2!1sen!2sus" className='berkeley-map'></iframe>
-            </div>
+            </div> */}
         </div>
     )
 }
