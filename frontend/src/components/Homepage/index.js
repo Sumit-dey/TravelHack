@@ -24,7 +24,7 @@ function HomePage() {
     }
 
     return (
-        <div className='body'>
+        <div>
             <div className='search-bar-div'>
                 <img src='https://www.teahub.io/photos/full/112-1123990_beautiful-cartoon-background.jpg' alt='green forest' className='homeImage'></img>
             </div>
@@ -36,12 +36,12 @@ function HomePage() {
                     </label>
                 </form>
             </div>
-            <div className='get-all-spots-title'>Not sure where to go? Perfect.</div>
             <div>
                 <a href='/allspots' className='get-all-spots'>I'm Flexible</a>
+                <div className='get-all-spots-title'>Not sure where to go? Perfect.</div>
             </div>
             <div className='explore-nearby-title-div'>
-                <span className='explore-nearby-title'>Inspiration for your next trip</span>
+                <span className='explore-nearby-title'>Inspiration for your next trip...</span>
             </div>
             <div className='explore-nearby-div'>
                 <div className='san-francisco-div'>
