@@ -27,16 +27,15 @@ function HomePage() {
         <div className='body'>
             <div className='search-bar-div'>
                 <img src='https://www.teahub.io/photos/full/112-1123990_beautiful-cartoon-background.jpg' alt='green forest' className='homeImage'></img>
-                Welcome to Travel hack
             </div>
-            {/* <div className='inner-search-div'>
+            <div className='inner-search-div'>
                 <form className='search-bar' onSubmit={handleSubmit}>
                     <label>
-                        <input className='search-bar-input' type='search' placeholder='What city would you like to visit?' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} required />
-                        <button type='submit' className='search-button'>Go!</button>
+                        <input className='search-bar-input' type='search' placeholder='Which city would you like to visit?' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} required />
+                        <button type='submit' className='search-button'>Search</button>
                     </label>
                 </form>
-            </div> */}
+            </div>
             <div className='get-all-spots-title'>Not sure where to go? Perfect.</div>
             <div>
                 <a href='/allspots' className='get-all-spots'>I'm Flexible</a>
