@@ -41,7 +41,7 @@ function SingleSpot() {
         )
     }
     // console.log("this is spot", spot)
-    useEffect((id) => {
+    useEffect(() => {
         dispatch(getSingleSpot(id))
     }, [dispatch])
 

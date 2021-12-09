@@ -47,15 +47,15 @@ function HomePage() {
             <div className='explore-nearby-div'>
                 <div className='san-francisco-div'>
                     <div className='location-names-spans4'>
-                        <a href='/georgia'>
-                               Georgia
+                        <a href='/atlanta'>
+                        Atlanta
                         </a>
                     </div>
                 </div>
                 <div className='oakland-div'>
                     <div className='location-names-spans4'>
-                        <a href='/alabama'>
-                           Alabama
+                        <a href='/athens'>
+                           Athens
                         </a>
                         {/* <span className='link-title'>Oakland</span> */}
                     </div>

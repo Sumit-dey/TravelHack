@@ -1,7 +1,7 @@
 import { csrfFetch } from './csrf';
 
-const LOAD_GEORGIA = 'spots/LOAD_GEORGIA';
-const LOAD_ALABAMA = 'spots/LOAD_ALABAMA';
+const LOAD_ATLANTA = 'spots/LOAD_ATLANTA';
+const LOAD_ATHENS = 'spots/LOAD_ATHENS';
 const LOAD_SAN_JOSE = 'spots/LOAD_SAN_JOSE';
 const LOAD_SINGLE_SPOT = 'spots/LOAD_SINGLE_SPOT';
 const ADD_NEW_LISTING = 'spots/ADD_NEW_LISTING';
@@ -20,13 +20,13 @@ const search = list => ({
     list
 })
 
-const loadGeorgia = list => ({
-    type: LOAD_GEORGIA,
+const loadAtlanta = list => ({
+    type: LOAD_ATLANTA,
     list,
 });
 
-const loadAlabama = list => ({
-    type: LOAD_ALABAMA,
+const loadAthens = list => ({
+    type: LOAD_ATHENS,
     list,
 })
 
@@ -75,21 +75,21 @@ export const getSearch = (searchTerm) => async dispatch => {
     }
 }
 
-export const getGeorgiaSpots = () => async dispatch => {
-    const response = await fetch('/api/georgia');
+export const getAtlantaSpots = () => async dispatch => {
+    const response = await fetch('/api/atlanta');
 
     if (response.ok) {
         const spots = await response.json();
-        dispatch(loadGeorgia(spots));
+        dispatch(loadAtlanta(spots));
     }
 }
 
-export const getAlabamaSpots = () => async dispatch => {
-    const response = await fetch('/api/alabama');
+export const getAthensSpots = () => async dispatch => {
+    const response = await fetch('/api/athens');
 
     if (response.ok) {
         const spots = await response.json();
-        dispatch(loadAlabama(spots));
+        dispatch(loadAthens(spots));
     }
 }
 
@@ -180,7 +180,7 @@ const initialState = {
 
 const spotReducer = (state = initialState, action) => {
     switch (action.type) {
-        case LOAD_GEORGIA: {
+        case LOAD_ATLANTA: {
             const newState = { ...state }
             action.list.forEach(spot => {
                 newState[spot.id] = spot;
@@ -189,7 +189,7 @@ const spotReducer = (state = initialState, action) => {
             return newState;
 
         }
-        case LOAD_ALABAMA: {
+        case LOAD_ATHENS: {
             const newState = { ...state }
             action.list.forEach(spot => {
                 newState[spot.id] = spot;

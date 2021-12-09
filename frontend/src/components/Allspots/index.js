@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { Redirect } from 'react-router-dom';
 import { getAllSpots } from '../../store/spots';
-import '../Georgia/Georgia.css';
+import '../Atlanta/Atlanta.css';
 
 function AllSpots() {
 
@@ -27,7 +27,7 @@ function AllSpots() {
                     return <div className='berkeley-spots-div' key={spot.id}>
                         <div>
                             <a href={`/spot/${spot.id}`}  >
-                                <img src='https://media.discordapp.net/attachments/906632677304709120/906739848885444608/7f927b46-3d48-4b67-9d79-2d163fc39375.png?width=1029&height=686' alt='spot-image' className='berkeley-main-images' />
+                                <img src={spot.Images[0].url} alt='spot-image' className='berkeley-main-images' />
                             </a>
                         </div>
                         <div className='berkeley-spots-info-div'>

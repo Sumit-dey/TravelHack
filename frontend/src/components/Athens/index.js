@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import * as sessionActions from '../../store/session';
+import React, {  useEffect } from 'react';
+// import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { getGeorgiaSpots } from '../../store/spots';
-import './Georgia.css';
+// import { Redirect } from 'react-router-dom';
+import { getAthensSpots } from '../../store/spots';
+import '../Atlanta/Atlanta.css';
 
-function Georgia() {
-
+function Athens() {
     const spots = useSelector(state => state.spots)
 
     const spotsArray = Object.assign([], spots)
@@ -16,18 +15,19 @@ function Georgia() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getGeorgiaSpots());
+        dispatch(getAthensSpots());
     }, [dispatch])
 
     return (
         <div className='top-level-div'>
             <div className='berkeley-spots-parent-container'>
-                <div className='san-francisco-location-title'>Stays in Georgia</div>
+                <div className='san-francisco-location-title'>Stays in Athens</div>
                 {spotsArray.map(spot => {
                     return <div className='berkeley-spots-div' key={spot.id}>
                         <div>
                             <a href={`/spot/${spot.id}`}  >
-                                <img src='https://media.discordapp.net/attachments/906632677304709120/906739848885444608/7f927b46-3d48-4b67-9d79-2d163fc39375.png?width=1029&height=686' alt='spot-image' className='berkeley-main-images' />
+                                {/* {console.log(spot?.Images)} */}
+                                <img src={spot?.Images[0].url} alt='spot-image' className='berkeley-main-images' />
                             </a>
                         </div>
                         <div className='berkeley-spots-info-div'>
@@ -42,10 +42,10 @@ function Georgia() {
                 })}
             </div>
             <div className='berkeley-map-parent-container'>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3439665.5816702098!2d-85.42212083495136!3d32.65815562727409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f136c51d5f8157%3A0x6684bc10ec4f10e7!2sGeorgia!5e0!3m2!1sen!2sus!4v1639000206148!5m2!1sen!2sus" className='berkeley-map'></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443579.8271324504!2d-88.92456601703915!3d32.55628991248078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88867f341f4bfe75%3A0x5e55343553c8cce9!2sAlabama!5e0!3m2!1sen!2sus!4v1639000296102!5m2!1sen!2sus" className='berkeley-map'></iframe>
             </div>
         </div>
     )
 }
 
-export default Georgia;
+export default Athens;

@@ -6,8 +6,8 @@ import SignupFormPage from "./components/SignupForm";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Homepage from "./components/Homepage";
-import Georgia from "./components/Georgia";
-import Alabama from "./components/Alabama";
+import Atlanta from "./components/Atlanta";
+import Athens from "./components/Athens";
 import SanJose from './components/SanJose'
 import Spot from "./components/SingleSpot";
 import CreateListing from "./components/CreateListing";
@@ -37,11 +37,11 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path='/georgia'>
-            <Georgia />
+          <Route path='/Atlanta'>
+            <Atlanta />
           </Route>
-          <Route path='/alabama'>
-            <Alabama />
+          <Route path='/athens'>
+            <Athens />
           </Route>
           <Route path='/sanjose'>
             <SanJose />
