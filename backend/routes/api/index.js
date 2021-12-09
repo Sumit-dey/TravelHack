@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-const georgiaRouter = require('./georgia.js')
-const alabamaRouter = require('./alabama.js')
+const atlantaRouter = require('./atlanta.js')
+const athensRouter = require('./athens.js')
 const sanJoseRouter = require('./sanjose.js')
 const spotRouter = require('./singleSpot.js')
 const createListing = require('./createlisting')
@@ -15,9 +15,9 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-router.use('/georgia', georgiaRouter);
+router.use('/atlanta', atlantaRouter);
 
-router.use('/alabama', alabamaRouter);
+router.use('/athens', athensRouter);
 
 
 router.use('/sanjose', sanJoseRouter);

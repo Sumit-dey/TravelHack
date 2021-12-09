@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/', asyncHandler(async (req, res) => {
     const spots = await Spot.findAll({
         where: {
-            city: 'Georgia'
+            city: 'Athens'
         },
         include: [User, Image],
         order: [['createdAt', 'DESC']]
