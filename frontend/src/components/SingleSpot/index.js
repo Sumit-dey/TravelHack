@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
@@ -41,7 +41,7 @@ function SingleSpot() {
         )
     }
     // console.log("this is spot", spot)
-    useEffect(() => {
+    useEffect((id) => {
         dispatch(getSingleSpot(id))
     }, [dispatch])
 
@@ -56,7 +56,7 @@ function SingleSpot() {
 
                 <div className='single-spot-parent-images'>
                     {spot?.Images.map(image => {
-                        return <img src={image.url} className='single-spot-images' key={image.id} />
+                        return <img src={image.url} className='single-spot-images'alt='single-spot' key={image.id} />
 
                         // return <div className='single-spot-divs' key={image.id}>
                     })}
@@ -66,7 +66,7 @@ function SingleSpot() {
                     <div className='single-spot-under-pics'>
                         <div className='single-spot-hosted-and-pic'>
                             <div className='single-spot-host'>Entire rental unit hosted by {spot?.User.username}</div>
-                            <span className='spot-user-headshot-span'><img src={spot?.User.photoUrl} className='spot-user-headshot'></img></span>
+                            <span className='spot-user-headshot-span'><img src={spot?.User.photoUrl}  alt='spot-user' className='spot-user-headshot'></img></span>
                         </div>
                         <div className='single-spot-details'>{spot?.details}</div>
                         <div className='single-spot-about-this-space'>About this Space</div>
