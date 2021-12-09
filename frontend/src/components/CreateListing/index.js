@@ -210,7 +210,7 @@ function CreateListing() {
                         </label>
                     </div>
                     <div className='signup-button-div'>
-                        <button type="submit" className='signup-button'>Create Listing!</button>
+                        <button type="submit" className='signup-button'>Submit</button>
                     </div>
                 </form>
             </div>

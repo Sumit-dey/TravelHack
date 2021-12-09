@@ -42,7 +42,7 @@ function LeaveReview({ hideForm }) {
                 <label>
                     <div className='title-handler-div'>
                         <div className='leave-a-review-title'>
-                            Leave a review
+                            Write a review
                         </div>
                         <ul className='review-error-handler'>
                             {errors.map((error, idx) => (
@@ -57,7 +57,7 @@ function LeaveReview({ hideForm }) {
 
                     />
                 </label>
-                <div>
+                <div className='leave-submit'>
                     <button type="submit" className='leave-review-submit-button'>Submit</button>
                 </div>
             </form>

@@ -14,7 +14,7 @@ import CreateListing from "./components/CreateListing";
 import EditListing from "./components/EditListing";
 import AllSpots from "./components/Allspots";
 import SearchResultSpots from "./components/SearchResultSpots";
-import LeaveReview from "./components/LeaveReviewModal/LeaveReview";
+
 
 function App() {
   const dispatch = useDispatch();

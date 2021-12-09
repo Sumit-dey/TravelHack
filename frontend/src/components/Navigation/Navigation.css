@@ -87,10 +87,11 @@ list-style-type: none;
 #navbar-signup-button {
   /* float: right; */
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 4px;
+  right: 56px;
+  padding-bottom: 5px;
   font-weight: lighter;
-  padding-top: 14px;
+  padding-top: 10px;
   color:white;
   background-color: firebrick;
   border-radius: 10px;
@@ -106,13 +107,14 @@ list-style-type: none;
 
 #navbar-login-button {
   background-color: firebrick;
-
+  padding-bottom: 5px;
   border-radius: 10px;
   position: fixed;
   color: white;
-  top: 0;
-  right: 91px;
-  padding-top: 14px;
+  top: 4px;
+  bottom: 2px;
+  right: 160px;
+  padding-top: 10px;
   font-weight: lighter;
   /* padding-top: 10px;
   padding-bottom: 12px;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import * as sessionActions from '../../store/session';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { useHistory } from 'react-router-dom';
@@ -13,10 +13,7 @@ function SingleSpot() {
     const history = useHistory()
     const spot = useSelector(state => state?.spots[id])
     const sessionUser = useSelector(state => state?.session.user);
-    // console.log("session user", sessionUser)
-    // console.log("spot user", spot.id)
-    // const getReviews = useSelector(state => state)
-    // console.log(getReviews)
+
     const handleDelete = (id) => {
         dispatch(deleteListing(id));
         history.push('/')
@@ -122,7 +119,8 @@ function SingleSpot() {
                     {spot?.Reviews.map(review => {
                         return <div key={review?.id} className='single-spot-reviews'>
                             <div className='username-and-photo'>
-                                <img src={review?.User?.photoUrl} className='review-user-headshot' />
+                                <p> Username :</p>
+                                {/* <img src='/demo.png' className='review-user-headshot' /> */}
                                 <span className='review-username'>{review?.User?.username}</span>
                             </div>
                             <div className='review-div'> {review?.review} </div>

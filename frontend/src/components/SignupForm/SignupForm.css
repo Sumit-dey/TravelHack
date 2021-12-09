@@ -113,7 +113,7 @@
     min-width: 350px;
 }
 .signup-button {
-    background-color: #90c590;
+    background-color: firebrick;
     color: white;
     padding: 14px 20px;
     /* margin: 8px 0; */
@@ -121,24 +121,3 @@
     cursor: pointer;
     width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
