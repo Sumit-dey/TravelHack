@@ -42,7 +42,7 @@ function Atlanta() {
                 })}
             </div>
             <div className='berkeley-map-parent-container'>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3439665.5816702098!2d-85.42212083495136!3d32.65815562727409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f136c51d5f8157%3A0x6684bc10ec4f10e7!2sGeorgia!5e0!3m2!1sen!2sus!4v1639000206148!5m2!1sen!2sus" className='berkeley-map'></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.7411321579!2d-84.56068880457461!3d33.767633772689834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045d6993098d%3A0x66fede2f990b630b!2sAtlanta%2C%20GA!5e0!3m2!1sen!2sus!4v1639066777247!5m2!1sen!2sus" className='berkeley-map'></iframe>
             </div>
         </div>
     )
