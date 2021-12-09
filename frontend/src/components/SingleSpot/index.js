@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react';
+// import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { useHistory } from 'react-router-dom';
 import { getSingleSpot, deleteListing } from '../../store/spots';
 import LeaveReview from '../LeaveReviewModal';
 import './SingleSpot.css';
+import dropDownMenuImage from './user.png'
 
 function SingleSpot() {
     const { id } = useParams();
@@ -13,7 +14,10 @@ function SingleSpot() {
     const history = useHistory()
     const spot = useSelector(state => state?.spots[id])
     const sessionUser = useSelector(state => state?.session.user);
-
+    // console.log("session user", sessionUser)
+    // console.log("spot user", spot.id)
+    // const getReviews = useSelector(state => state)
+    // console.log(getReviews)
     const handleDelete = (id) => {
         dispatch(deleteListing(id));
         history.push('/')
@@ -23,12 +27,12 @@ function SingleSpot() {
     let deleteLink;
     if (sessionUser?.id === spot?.userId) {
         editLink = (
-            <span>•
+            <span>
                 <a href={`/editlisting/${spot?.id}`} className='single-spot-edit-button'>EDIT</a>
             </span>
         )
         deleteLink = (
-            <span>•
+            <span>
                 <button onClick={() => handleDelete(id)} className='single-spot-delete-button'>REMOVE</button>
             </span>
         )
@@ -56,7 +60,7 @@ function SingleSpot() {
 
                 <div className='single-spot-parent-images'>
                     {spot?.Images.map(image => {
-                        return <img src={image.url} className='single-spot-images'alt='single-spot' key={image.id} />
+                        return <img src={image.url} className='single-spot-images' key={image.id} />
 
                         // return <div className='single-spot-divs' key={image.id}>
                     })}
@@ -66,11 +70,10 @@ function SingleSpot() {
                     <div className='single-spot-under-pics'>
                         <div className='single-spot-hosted-and-pic'>
                             <div className='single-spot-host'>Entire rental unit hosted by {spot?.User.username}</div>
-                            <span className='spot-user-headshot-span'><img src={spot?.User.photoUrl}  alt='spot-user' className='spot-user-headshot'></img></span>
                         </div>
                         <div className='single-spot-details'>{spot?.details}</div>
-                        <div className='single-spot-about-this-space'>About this Space</div>
-                        <div className='single-spot-aboutThisSpace'>{spot?.aboutThisSpace}</div>
+                        <div className='single-spot-about-this-space'>About this Place</div>
+                        <div className='single-spot-aboutThePlace'>{spot?.aboutThePlace}</div>
                         <div className='what-this-place-offers'>What this place offers</div>
                         <div className='offerings-parent-div'>
                             <div className='offerings-inner-divs'>Kitchen</div>
@@ -119,8 +122,7 @@ function SingleSpot() {
                     {spot?.Reviews.map(review => {
                         return <div key={review?.id} className='single-spot-reviews'>
                             <div className='username-and-photo'>
-                                <p> Username :</p>
-                                {/* <img src='/demo.png' className='review-user-headshot' /> */}
+                                <img src={dropDownMenuImage} className='review-user-headshot' />
                                 <span className='review-username'>{review?.User?.username}</span>
                             </div>
                             <div className='review-div'> {review?.review} </div>

@@ -4,8 +4,8 @@ import * as sessionActions from '../../store/session';
 import './Navigation.css';
 // import dropDownMenuImage from './iconmonstr-user-icon.png'
 // import emailImage from './iconmonstr-paper-plane-resized.png'
-// import userImageInsideDropdown from './iconmonstr-user-inside-dropdown.png'
 import { useHistory } from 'react-router-dom';
+import dropDownMenuImage from './demo.png'
 function ProfileButton({ user }) {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
@@ -37,12 +37,12 @@ function ProfileButton({ user }) {
         <>
             <a href='/createlisting' className='create-listing-link'>Become a Host</a>
             <button onClick={openMenu} id='dropdown-menu-button'>
-                {/* <img src={dropDownMenuImage} alt='dropdown menu' id='dropdown-menu-image' /> */}
+                <img src={dropDownMenuImage} alt='dropdown menu' id='dropdown-menu-image' />
             </button>
             {showMenu && (
                 <ul className="profile-dropdown">
                     <li id='username-inside-dropdown'>
-                        {/* <img src={userImageInsideDropdown} alt='email' id='email-image-dropdown' /> */}
+                        {/* <img src={logout} alt='email' id='email-image-dropdown' /> */}
                         <span>{user.username}</span>
                     </li>
                     <li id='email-inside-dropdown'>

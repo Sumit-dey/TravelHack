@@ -187,7 +187,7 @@ function CreateListing() {
                     </div>
                     <div className='username-div'>
                         <label className='username-label'>
-                            Tell us about this space
+                            Tell us about this Place
                             <textarea className='username-input-box'
                                 placeholder='Write a little something about what your space has to offer'
                                 type="text"
