@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 // import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { getEditListing, editListing } from '../../store/spots';
 import { useHistory } from 'react-router-dom';
 import './EditListing.css';

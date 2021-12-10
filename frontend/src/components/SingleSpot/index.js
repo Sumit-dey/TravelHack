@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-// import * as sessionActions from '../../store/session';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { useHistory } from 'react-router-dom';
@@ -14,10 +13,6 @@ function SingleSpot() {
     const history = useHistory()
     const spot = useSelector(state => state?.spots[id])
     const sessionUser = useSelector(state => state?.session.user);
-    // console.log("session user", sessionUser)
-    // console.log("spot user", spot.id)
-    // const getReviews = useSelector(state => state)
-    // console.log(getReviews)
     const handleDelete = (id) => {
         dispatch(deleteListing(id));
         history.push('/')
@@ -44,7 +39,7 @@ function SingleSpot() {
             <LeaveReview />
         )
     }
-    // console.log("this is spot", spot)
+
     useEffect(() => {
         dispatch(getSingleSpot(id))
     }, [dispatch])
@@ -60,9 +55,7 @@ function SingleSpot() {
 
                 <div className='single-spot-parent-images'>
                     {spot?.Images.map(image => {
-                        return <img src={image.url} className='single-spot-images' key={image.id} />
-
-                        // return <div className='single-spot-divs' key={image.id}>
+                        return <img src={image.url} className='single-spot-images' alt='a' key={image.id} />
                     })}
                 </div>
 
@@ -116,13 +109,12 @@ function SingleSpot() {
 
 
                 </div>
-                {/* <div className='single-spot-reviews'>Reviews</div> */}
                 {leaveAReview}
                 <div className='single-spot-reviews-container'>
                     {spot?.Reviews.map(review => {
                         return <div key={review?.id} className='single-spot-reviews'>
                             <div className='username-and-photo'>
-                                <img src={dropDownMenuImage} className='review-user-headshot' />
+                                <img src={dropDownMenuImage} className='review-user-headshot' alt='ab' />
                                 <span className='review-username'>{review?.User?.username}</span>
                             </div>
                             <div className='review-div'> {review?.review} </div>

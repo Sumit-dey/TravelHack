@@ -36,33 +36,33 @@ function LeaveReview({ hideForm }) {
     };
 
 
-    return (
-        <div className='leave-review-form'>
-            <form onSubmit={handleSubmit} >
-                <label>
-                    <div className='title-handler-div'>
-                        <div className='leave-a-review-title'>
-                            Write a review
-                        </div>
-                        <ul className='review-error-handler'>
-                            {errors.map((error, idx) => (
-                                <li key={idx}>{error}</li>
-                            ))}
-                        </ul>
+return (
+    <div className='leave-review-form'>
+        <form onSubmit={handleSubmit} >
+            <label>
+                <div className='title-handler-div'>
+                    <div className='leave-a-review-title'>
+                        Write a review
                     </div>
-                    <textarea className='leave-review-textarea'
-                        type="text"
-                        value={review}
-                        onChange={(e) => setReview(e.target.value)}
-
-                    />
-                </label>
-                <div className='leave-submit'>
-                    <button type="submit" className='leave-review-submit-button'>Submit</button>
+                    <ul className='review-error-handler'>
+                        {errors.map((error, idx) => (
+                            <li key={idx}>{error}</li>
+                        ))}
+                    </ul>
                 </div>
-            </form>
-        </div>
-    );
+                <textarea className='leave-review-textarea'
+                    type="text"
+                    value={review}
+                    onChange={(e) => setReview(e.target.value)}
+
+                />
+            </label>
+            <div className='leave-submit'>
+                <button type="submit" className='leave-review-submit-button'>Submit</button>
+            </div>
+        </form>
+    </div>
+);
 }
 
 export default LeaveReview;

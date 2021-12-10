@@ -36,6 +36,10 @@ const validateSignup = [
             }
             return true;
         }),
+    check('review')
+        .exists({ checkFalsy: true })
+        .isLength({ min: 5 })
+        .withMessage('Password must be 6 characters or more'),
     handleValidationErrors,
 ];
 

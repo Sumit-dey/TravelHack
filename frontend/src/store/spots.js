@@ -141,6 +141,8 @@ export const createNewReview = (newReview) => async dispatch => {
     }
 }
 
+
+
 export const getEditListing = (spotId) => async dispatch => {
     const response = await fetch(`/api/editlisting/${spotId}`)
     if (response.ok) {
@@ -226,6 +228,7 @@ const spotReducer = (state = initialState, action) => {
             delete newState[action.list];
             return newState;
         }
+      
         case ADD_NEW_REVIEW: {
             const newState = {
                 ...state,

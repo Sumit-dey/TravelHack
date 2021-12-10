@@ -27,7 +27,7 @@ function Athens() {
                         <div>
                             <a href={`/spot/${spot.id}`}  >
                                 {/* {console.log(spot?.Images)} */}
-                                <img src={spot?.Images[0].url} alt='spot-image' className='berkeley-main-images' />
+                                <img src={spot?.Images[0].url} alt='spot' className='berkeley-main-images' />
                             </a>
                         </div>
                         <div className='berkeley-spots-info-div'>
@@ -42,7 +42,7 @@ function Athens() {
                 })}
             </div>
             <div className='berkeley-map-parent-container'>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105916.10993338717!2d-83.45916278238698!3d33.94425461935733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f66d19b4b433b9%3A0x4d747202d69d617c!2sAthens%2C%20GA!5e0!3m2!1sen!2sus!4v1639066943150!5m2!1sen!2sus" className='berkeley-map'></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105916.10993338717!2d-83.45916278238698!3d33.94425461935733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f66d19b4b433b9%3A0x4d747202d69d617c!2sAthens%2C%20GA!5e0!3m2!1sen!2sus!4v1639066943150!5m2!1sen!2sus" title='athen' className='berkeley-map'></iframe>
             </div>
         </div>
     )

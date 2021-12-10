@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import * as sessionActions from '../../store/session';
+import React, { useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+
 import { getAtlantaSpots } from '../../store/spots';
 import './Atlanta.css';
 
@@ -27,7 +27,7 @@ function Atlanta() {
                     return <div className='berkeley-spots-div' key={spot.id}>
                         <div>
                             <a href={`/spot/${spot.id}`}  >
-                                <img src={spot.Images[0].url} alt='spot-image' className='berkeley-main-images' />
+                                <img src={spot.Images[0].url} alt='spot' className='berkeley-main-images' />
                             </a>
                         </div>
                         <div className='berkeley-spots-info-div'>
@@ -42,7 +42,7 @@ function Atlanta() {
                 })}
             </div>
             <div className='berkeley-map-parent-container'>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.7411321579!2d-84.56068880457461!3d33.767633772689834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045d6993098d%3A0x66fede2f990b630b!2sAtlanta%2C%20GA!5e0!3m2!1sen!2sus!4v1639066777247!5m2!1sen!2sus" className='berkeley-map'></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.7411321579!2d-84.56068880457461!3d33.767633772689834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045d6993098d%3A0x66fede2f990b630b!2sAtlanta%2C%20GA!5e0!3m2!1sen!2sus!4v1639066777247!5m2!1sen!2sus" title='atlantaa' className='berkeley-map'></iframe>
             </div>
         </div>
     )
