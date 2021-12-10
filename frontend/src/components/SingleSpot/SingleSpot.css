@@ -255,7 +255,10 @@ padding-top: 10px;
     border-bottom: 1px solid lightgrey;
     width: 800px;
 }
-
+.lr{
+    margin-left: 560px;
+    /* margin-bottom: 50px; */
+}
 .offerings-inner-divs {
  margin-top: 15px;
  width: fit-content;

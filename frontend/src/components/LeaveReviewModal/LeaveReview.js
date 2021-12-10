@@ -41,9 +41,9 @@ return (
         <form onSubmit={handleSubmit} >
             <label>
                 <div className='title-handler-div'>
-                    <div className='leave-a-review-title'>
+                    {/* <div className='leave-a-review-title'>
                         Write a review
-                    </div>
+                    </div> */}
                     <ul className='review-error-handler'>
                         {errors.map((error, idx) => (
                             <li key={idx}>{error}</li>

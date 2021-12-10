@@ -109,7 +109,6 @@ function SingleSpot() {
 
 
                 </div>
-                {leaveAReview}
                 <div className='single-spot-reviews-container'>
                     {spot?.Reviews.map(review => {
                         return <div key={review?.id} className='single-spot-reviews'>
@@ -121,6 +120,10 @@ function SingleSpot() {
                         </div>
                     })}
                 </div>
+                <div className='lr'>
+                    {leaveAReview}
+                </div>
+
 
             </div>
         </div>
