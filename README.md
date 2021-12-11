@@ -42,7 +42,7 @@ The app has two features: Listings with full CRUD functionality, Reviews with Cr
  
 ![Screenshot (622)](https://user-images.githubusercontent.com/45556028/145685582-6e553d66-f8ff-4d8a-b188-296e3ab2496a.png)
 
-<h2>Create a Listing>
+<h2>Create a Listing</h2>
 Logged in users can create a listing by filling out the various fields on the "create a listing" page. Once the listing is created, the user will be redirected to the listing itself, to view
  
 
