@@ -10,7 +10,7 @@ TravelHack is an Airbnb clone with slight html/CSS alterations. Users can sign u
 <h2>Structure</h2>
 The app has two features: Listings with full CRUD functionality, Reviews with Create and Read functionality.
 
-<h2>Live Link <h2>
+<h2>Live Link </h2>
  Live-link in Heroku : https://travelhack.herokuapp.com/
 
 <h3>List Of Feature</h3>
