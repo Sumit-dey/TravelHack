@@ -65,7 +65,6 @@ exports.validateCreate = [
     image3,
     image4,
     image5,
-    review,
     handleValidationErrors,
 ];
 
@@ -83,7 +82,6 @@ exports.validateUpdate = [
     image3,
     image4,
     image5,
-    review,
     handleValidationErrors,
 ];
 

@@ -42,11 +42,9 @@ function ProfileButton({ user }) {
             {showMenu && (
                 <ul className="profile-dropdown">
                     <li id='username-inside-dropdown'>
-                        {/* <img src={logout} alt='email' id='email-image-dropdown' /> */}
                         <span>{user.username}</span>
                     </li>
                     <li id='email-inside-dropdown'>
-                        {/* <img src={emailImage} alt='email' id='email-image-dropdown' /> */}
                         <span>{user.email}</span>
                     </li>
                     <li>
