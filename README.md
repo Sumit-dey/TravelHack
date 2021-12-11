@@ -54,3 +54,17 @@ Logged in users can create a listing by filling out the various fields on the "c
  
  ![Screenshot (623)](https://user-images.githubusercontent.com/45556028/145685742-ff660796-33b6-4bdf-abfd-5a78de875795.png)
 
+<h2>Single Spot</h2>
+Each Spot displayed the the list can be clicked on, which will lead to a page with details about the listing. At the bottom of the page you can also view and post reviews.
+![Screenshot (624)](https://user-images.githubusercontent.com/45556028/145685803-309eb55a-fc56-42c4-9876-d592f4cc9089.png)
+
+<h2>Leave a Review>
+Logged in users can choose to leave reviews for listings by clicking the "Leave a review button". These reviews will populate on the listing page.
+ 
+ ![Screenshot (626)](https://user-images.githubusercontent.com/45556028/145685874-b117d77c-aeba-4c07-9706-aef8a33055b9.png)
+
+ 
+ 
+ 
+ 
+
