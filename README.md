@@ -56,6 +56,7 @@ Logged in users can create a listing by filling out the various fields on the "c
 
 <h2>Single Spot</h2>
 Each Spot displayed the the list can be clicked on, which will lead to a page with details about the listing. At the bottom of the page you can also view and post reviews.
+
 ![Screenshot (624)](https://user-images.githubusercontent.com/45556028/145685803-309eb55a-fc56-42c4-9876-d592f4cc9089.png)
 
 <h2>Leave a Review</h2>
