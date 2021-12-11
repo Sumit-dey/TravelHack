@@ -29,6 +29,10 @@ The app has two features: Listings with full CRUD functionality, Reviews with Cr
  
  All backend routes were designed in Express. This app uses a Sequelize database.
  
+ <h2>Frontend</h2>
+ 
+ All frontend routes and components were designed in React. All styling for the app was done with vanilla CSS.
+ 
  
  
 
