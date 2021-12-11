@@ -35,11 +35,22 @@ The app has two features: Listings with full CRUD functionality, Reviews with Cr
  All frontend routes and components were designed in React. All styling for the app was done with vanilla CSS.
  
  <h2>Home Page</h2>
- When a user first visits the site they hit the homepage, as shown below. Un-registered users can see the full site, but they cannot create listings, edit listings, delete listings, or leave reviews. Using either the search bar(searching by city), the "I'm flexible" button(to see all listings), or using "explore nearby" to search the four listed locations. Un-registered users can sign up in the top right of the navbar or click the link further down the page. Registered users can login from the navbar in the top right. Once you are logged in, the navbar changes from displaying "log in" and "sign up", to "create a listing".
+ When a user first visits the site they hit the homepage, as shown below. Un-registered users can see the full site, but they cannot create listings, edit listings, delete listings, or leave reviews. Using either the search bar(searching by city), the "I'm flexible" button(to see all listings), or using "Inspiration for your next trip" to search the three listed locations. Un-registered users can sign up in the top right of the navbar or click the link further down the page. Registered users can login from the navbar in the top right. Once you are logged in, the navbar changes from displaying "log in" and "sign up", to "create a listing".
  
  
  
  
 ![Screenshot (622)](https://user-images.githubusercontent.com/45556028/145685582-6e553d66-f8ff-4d8a-b188-296e3ab2496a.png)
 
+<h2>Create a Listing>
+Logged in users can create a listing by filling out the various fields on the "create a listing" page. Once the listing is created, the user will be redirected to the listing itself, to view
+ 
+
+![Screenshot (625)](https://user-images.githubusercontent.com/45556028/145685681-7320ce5c-3349-4a95-9d64-f392e08808f5.png)
+
+ <h2>Search by city and I'm Flexible</h2>
+ Clicking "I'm flexible" shows all listings on the site. Clicking Atlanta, Athens, San Jose will show spots from each of those locations. Using the search bar, you can also search by city. Each one of these options will populate listings to the page, shown below.
+ 
+ 
+ ![Screenshot (623)](https://user-images.githubusercontent.com/45556028/145685742-ff660796-33b6-4bdf-abfd-5a78de875795.png)
 
