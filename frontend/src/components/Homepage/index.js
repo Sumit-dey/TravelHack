@@ -77,6 +77,10 @@ function HomePage() {
                 {/* <img src='https://cdn3.iconfinder.com/data/icons/inficons/512/linkedin.png' /> */}
                     LinkedIn
                 </a>
+                <a href='https://github.com/Sumit-dey/TravelHack' className='linked-in'>
+                {/* <img src='https://cdn3.iconfinder.com/data/icons/inficons/512/linkedin.png' /> */}
+                    Github
+                </a>
             </div>
         </div>
 
