@@ -46,7 +46,7 @@ function HomePage() {
             <div className='explore-nearby-div'>
                 <div className='san-francisco-div'>
                     <div className='location-names-spans1'>
-                        <a href='/sanfrancisco'>
+                        <a href='/atlanta'>
                             <img src='https://media.discordapp.net/attachments/907008758226489385/907064997786566686/b2f9a313-334a-4e52-bdbe-caf0f0a6c804.png' alt='san-fran' className='san-fran-icon' />
                         </a>
                         <span className='link-title'>Atlanta</span>
@@ -54,7 +54,7 @@ function HomePage() {
                 </div>
                 <div className='oakland-div'>
                     <div className='location-names-spans2'>
-                        <a href='/oakland'>
+                        <a href='/athens'>
                             <img src='https://media.discordapp.net/attachments/907008758226489385/907065103873101834/ee86b8d6-b214-43f5-912c-3db2637a5724.png' alt='oakland' className='oakland-icon' />
                         </a>
                         <span className='link-title'>Athens</span>
