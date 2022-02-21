@@ -197,7 +197,7 @@
 
 .san-francisco-div {
    width: fit-content;
-   margin-left: 250px;
+   margin-left: 75px;
 }
 .oakland-div {
     width: fit-content;
@@ -218,7 +218,7 @@
 
 
 
-.location-names-spans3 {
+.location-names-spans3,.location-names-spans1,.location-names-spans2 {
     background-color: firebrick;
     color:white;
     text-decoration: none;
@@ -231,17 +231,6 @@
     margin-right: 200px;
 }
 
-.location-names-spans4 {
-    background-color: firebrick;
-    color:white;
-    text-decoration: none;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 12px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 25px;
-}
 
 /* .background-color-for-lower-images {
    height: 500px;
