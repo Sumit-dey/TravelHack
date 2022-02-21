@@ -26,7 +26,7 @@ function HomePage() {
     return (
         <div>
             <div className='search-bar-div'>
-                <img src='https://combo.staticflickr.com/ap/build/images/sohp/2020-top-25/Cool_Power_commended-LPOTY_UK_Steve_Cole.jpg' alt='green forest' className='homeImage'></img>
+                <img src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/020e1179-46f8-43ff-9c44-4280cde630ec/ddc2a66-e5df6195-5eeb-498c-be58-7807cc3a2926.jpg/v1/fill/w_1280,h_720,q_75,strp/ocean_sunset_beach_wallpaper_hd_4k_by_sahibdm_ddc2a66-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvMDIwZTExNzktNDZmOC00M2ZmLTljNDQtNDI4MGNkZTYzMGVjXC9kZGMyYTY2LWU1ZGY2MTk1LTVlZWItNDk4Yy1iZTU4LTc4MDdjYzNhMjkyNi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.kGDLbnhqX8l-tHiayT7MzYB3UKvn2a6L0bU0OYpBCp0' alt='green forest' className='homeImage'></img>
             </div>
             <div className='inner-search-div'>
                 <form className='search-bar' onSubmit={handleSubmit}>
