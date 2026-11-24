@@ -279,3 +279,29 @@ a{
     padding-right: 15px;
 
 }
+
+/* City tiles: share the window width and scale with it */
+.explore-nearby-div {
+    gap: 3%;
+    padding: 0 4%;
+}
+
+.san-francisco-div, .oakland-div, .san-jose-div {
+    flex: 1 1 0;
+    min-width: 0;
+    margin-left: 0;
+}
+
+.location-names-spans1, .location-names-spans2, .location-names-spans3 {
+    display: block;
+    margin-right: 0;
+}
+
+.san-fran-icon, .oakland-icon, .san-jose-icon {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
